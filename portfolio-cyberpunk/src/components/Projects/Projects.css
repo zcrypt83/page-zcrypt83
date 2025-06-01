@@ -1,0 +1,67 @@
+.projects-section {
+  /* Base styling by Tailwind */
+  /* overflow-hidden is on the section in Projects.tsx to prevent scrollbar from affecting page layout if not styled */
+}
+
+.horizontal-scroll-container {
+  /* -webkit-overflow-scrolling: touch; */ /* Smooth scrolling on iOS, good to have */
+  /* scroll-snap-type: x mandatory; */ /* Re-enable if desired, ensure compatibility and test thoroughly */
+
+  /* Custom scrollbar styling */
+  /* For Webkit browsers (Chrome, Safari, Edge) */
+}
+.horizontal-scroll-container::-webkit-scrollbar {
+  height: 10px; /* Height of horizontal scrollbar */
+}
+.horizontal-scroll-container::-webkit-scrollbar-track {
+  background: var(--darkMatteBlack); /* Track color */
+  border-radius: 5px;
+  margin: 0 2px; /* Optional margin for the track */
+}
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--electric-blue); /* Thumb color */
+  border-radius: 5px;
+  border: 2px solid var(--darkMatteBlack); /* Creates padding around thumb, making it appear thinner */
+}
+.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--hot-pink); /* Thumb color on hover */
+}
+
+/* For Firefox */
+.horizontal-scroll-container { /* Apply to the same div */
+  scrollbar-width: auto; /* Or 'thin' or 'none'. 'auto' is default. */
+  scrollbar-color: var(--electric-blue) var(--darkMatteBlack); /* thumb color, track color */
+}
+
+
+.project-scroll-item {
+  /* scroll-snap-align: start; */ /* Re-enable if scroll-snap-type is used */
+  /* The ProjectCard component should define its own height (e.g., h-full) */
+  /* Padding for spacing between cards is handled by pr-5 on this item, except for the last one. */
+}
+
+/* Optional: To add a fade-out effect at the edges of the scroll container */
+/* This usually requires pseudo-elements on the container or a wrapper */
+/*
+.horizontal-scroll-container-wrapper {
+  position: relative;
+}
+.horizontal-scroll-container-wrapper::before,
+.horizontal-scroll-container-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px; // Adjust width of fade
+  pointer-events: none; // Allow clicks through
+  z-index: 2; // Above cards but below any UI on top
+}
+.horizontal-scroll-container-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--darkMatteBlack), transparent);
+}
+.horizontal-scroll-container-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--darkMatteBlack), transparent);
+}
+*/

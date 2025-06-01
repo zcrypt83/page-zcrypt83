@@ -1,0 +1,34 @@
+.project-card {
+  /* Base styling primarily handled by Tailwind CSS classes in ProjectCard.tsx */
+  /* 'h-full' class in Tailwind ensures it takes full height of grid cell if parent is a grid */
+  /* 'flex flex-col' ensures content within card can use flex-grow for spacing */
+  /* 'overflow-hidden' is important for child image scaling effects */
+}
+
+.project-card-image-container {
+  /* Fixed height set by Tailwind (h-48 md:h-56) */
+  /* 'relative' for absolute positioning of overlays if any */
+  /* 'overflow-hidden' to clip the image during scale transforms */
+}
+
+.project-card-image-container img {
+  /* 'w-full h-full object-cover' from Tailwind ensures the image covers the container */
+  /* 'transition-transform duration-300 ease-in-out' for smooth scaling */
+  /* 'group-hover:scale-110' in Tailwind scales image when parent .project-card (with 'group' class) is hovered */
+}
+
+.project-card-content {
+  /* 'p-4 flex flex-col flex-grow' from Tailwind provides padding and flex behavior */
+  /* 'flex-grow' on description and this container helps push links to the bottom */
+}
+
+.project-tags span {
+  /* Styling for individual tags: Tailwind classes like 'inline-block bg-electricBlue/10 text-electricBlue ...' */
+  /* No additional CSS needed here unless for very specific effects not achievable with Tailwind. */
+}
+
+.project-links a {
+  /* Styling for links/buttons: Primarily Tailwind classes. */
+  /* Framer Motion 'whileHover' props are used for interactive feedback on these links. */
+  /* Ensure custom cursor interactions are handled globally or specifically if needed. */
+}
