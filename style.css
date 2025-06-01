@@ -1,0 +1,83 @@
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Styling for the main header */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+/* Styling for the navigation container */
+nav {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Styling for navigation buttons */
+nav button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #2980b9;
+}
+
+/* Styling for the profile content container */
+#profileContainer {
+    border: 1px solid #ddd;
+    padding: 25px;
+    min-height: 400px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Optional: Add some styling for when content is loaded, e.g., a markdown-like appearance */
+#profileContainer h1,
+#profileContainer h2,
+#profileContainer h3 {
+    color: #2c3e50;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+#profileContainer ul {
+    padding-left: 20px;
+}
+
+#profileContainer li {
+    margin-bottom: 0.5em;
+}
+
+#profileContainer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+#profileContainer a:hover {
+    text-decoration: underline;
+}
+
+#profileContainer code {
+    background-color: #ecf0f1;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
