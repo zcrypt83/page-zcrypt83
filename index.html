@@ -1,22 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer and Cybersecurity Profiles</title>
+    <title>CV Dinámico | Iván Zárate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Developer and Cybersecurity Profiles</h1>
-
-    <nav>
-        <button id="devBtn">Developer Profile</button>
-        <button id="cyberBtn">Cybersecurity Profile</button>
-    </nav>
-
-    <div id="profileContainer">
-        <!-- Profile content will be loaded here by JavaScript -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+        </label>
+        <em>Cambiar Tema</em>
     </div>
+
+    <main class="main-container">
+        <header id="profile-header" class="card profile-card"></header>
+
+        <div class="grid-container">
+            <aside class="left-column">
+                <section id="contact-section" class="card"></section>
+                <section id="skills-section" class="card"></section>
+            </aside>
+
+            <div class="right-column">
+                <section id="about-section" class="card"></section>
+                <section id="experience-section" class="card"></section>
+                <section id="education-section" class="card"></section>
+                <section id="certifications-section" class="card"></section>
+            </div>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
