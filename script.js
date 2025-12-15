@@ -81,14 +81,14 @@ const linkedInData = {
             issuer: "Cisco Networking Academy / IDAT", 
             date: "21/12/2023",
             // *** PEGA AQUÍ LA RUTA O URL DEL CERTIFICADO CCNA ***
-            credentialUrl: "cnna.jpg"
+            credentialUrl: "ess.jpg"
         },
         {
             name: "IT Essentials",
             issuer: "Cisco Networking Academy / IDAT", 
             date: "22/12/2023",
             // *** PEGA AQUÍ LA RUTA O URL DEL CERTIFICADO IT ESSENTIALS ***
-            credentialUrl: "ess.jpg" 
+            credentialUrl: "cnna.jpg" 
         
         }
     ]
