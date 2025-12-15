@@ -1,83 +1,203 @@
-/* Basic styling for the body */
+:root {
+    --primary-color: #2563eb;
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    --text-secondary: #6b7280;
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --primary-color: #60a5fa;
+    --bg-color: #111827;
+    --card-bg: #1f2937;
+    --text-main: #f9fafb;
+    --text-secondary: #d1d5db;
+    --border-color: #374151;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Styling for the main header */
-h1 {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    color: #2c3e50;
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* Styling for the navigation container */
-nav {
-    text-align: center;
-    margin-bottom: 30px;
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
 }
 
-/* Styling for navigation buttons */
-nav button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+/* Header */
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    text-align: left;
+}
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+}
+h1 { margin: 0; font-size: 2rem; color: var(--primary-color); }
+h2 { margin: 8px 0; font-size: 1.2rem; font-weight: 500; color: var(--text-secondary); }
+
+/* Layout Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1/3 para lateral, 2/3 para principal */
+    gap: 20px;
 }
 
-nav button:hover {
-    background-color: #2980b9;
+/* Sections */
+h3 {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Styling for the profile content container */
-#profileContainer {
-    border: 1px solid #ddd;
-    padding: 25px;
-    min-height: 400px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Skills */
+.skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.skill-pill {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
-/* Optional: Add some styling for when content is loaded, e.g., a markdown-like appearance */
-#profileContainer h1,
-#profileContainer h2,
-#profileContainer h3 {
-    color: #2c3e50;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-}
-
-#profileContainer ul {
+/* Timeline Experience */
+.timeline-item {
     padding-left: 20px;
+    border-left: 3px solid var(--border-color);
+    margin-bottom: 24px;
+    position: relative;
+}
+.timeline-item::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    left: -7.5px;
+    top: 5px;
+}
+.timeline-item h4 { margin: 0; font-size: 1.1rem; }
+.company-name { font-weight: bold; display: block; margin-top: 4px; }
+.period { font-size: 0.9rem; color: var(--text-secondary); display: block; margin-bottom: 8px; font-style: italic; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-container { grid-template-columns: 1fr; }
+    .profile-card { flex-direction: column; text-align: center; }
 }
 
-#profileContainer li {
-    margin-bottom: 0.5em;
+/* Theme Switcher Styles (Simplificado) */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 10px;
+}
+.theme-switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    align-items: center;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+/* Agrega esto a style.css */
+.contact-list {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
 }
 
-#profileContainer a {
-    color: #3498db;
+.contact-list li {
+    margin-bottom: 12px; /* Espacio entre cada contacto */
+}
+
+.contact-list a {
     text-decoration: none;
+    color: var(--text-main); /* Usa el color del tema actual */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
-#profileContainer a:hover {
-    text-decoration: underline;
+.contact-list a:hover {
+    color: var(--primary-color);
 }
 
-#profileContainer code {
-    background-color: #ecf0f1;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+.contact-list i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    width: 25px; /* Alinea los iconos verticalmente */
+    text-align: center;
 }
+/* Agrega este estilo a style.css */
+.certification-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color);
+}
+.certification-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+input:checked + .slider { background-color: var(--primary-color); }
+input:checked + .slider:before { transform: translateX(26px); }
+.fa-sun { color: #f39c12; }
+.fa-moon { color: #f1c40f; }
